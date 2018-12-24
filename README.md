@@ -1,15 +1,18 @@
 ## Description
-Proven example showing how to configure (flash the firmware) Xilinx Spartan-6 FPGA (XC6SLX-2FTG256C) using ARM MCU (Texas Instruments Tiva-C TM4C1294NCPDT). The design is not hardware-specific and can be easily ported to another MCU and similar FPGA.
+Proven example showing how to configure (flash the firmware) Xilinx Spartan-6 FPGA (XC6SLX-2FTG256C) using ARM MCU (Texas Instruments Tiva-C TM4C1294NCPDT). The design is not strictly hardware-specific and can be easily ported to another MCU and similar FPGA.
 
 Chosen method - slave serial. It is a basic synchronous, single data-wire interface. The bitstream is stored in MCU Flash memory.
 
 
 ## Bitstream
-You need to generate the bitstream using Xilinx BitGen utility with following command-line options:
+You need to generate the `.bin` bitstream using Xilinx BitGen utility with following command-line options:
 
 ```
-
+-g Binary:yes
 ```
+
+In PlanAhead, for example, it can be done via GUI in the 'Bitstream Settings' section of Flow Navigator:
+![planahead](/planahead.png)
 
 The bitstream is stored in MCU Flash memory in form of pair of `.c/.h` files.
 
